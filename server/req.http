@@ -1,0 +1,67 @@
+@baseUrl = http://localhost:3000/api
+@contentType = application/json
+
+### Sign Up HR
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentType}}
+
+{
+    "username": "hrmanager",
+    "email": "hr@company.com",
+    "password": "password123",
+    "role": "HR"
+}
+
+### Sign Up Team Lead
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentType}}
+
+{
+    "username": "teamlead1",
+    "email": "lead@company.com",
+    "password": "password123",
+    "role": "TEAM LEAD",
+    "company_id": "nvwuiubvw938hnvwWA"
+}
+
+### Sign Up Employee
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentType}}
+
+{
+    "username": "employee1",
+    "email": "emp@company.com",
+    "password": "password123",
+    "role": "EMP",
+    "company_id": "nvwuiubvw938hnvwWA"
+}
+
+### Sign In
+POST {{baseUrl}}/users/signin
+Content-Type: {{contentType}}
+
+{
+    "email": "hr@company.com",
+    "password": "password123"
+}
+
+### Create Company (HR only)
+POST {{baseUrl}}/companies/create
+Content-Type: {{contentType}}
+
+{
+    "email": "hr@company.com",
+    "company_name": "Tech Company Ltd",
+    "company_id":"12334"
+}
+
+### Testing Notes:
+# 1. First create an HR user using the Sign Up HR request
+# 2. Use the HR email to create a company
+# 3. Get the company ID from the response
+# 4. Use that company ID to create Team Lead and Employee users
+# 5. You can sign in with any user using the Sign In request
+
+### Example Successful Flow:
+# 1. Sign Up HR -> Get HR user details
+# 2. Create Company with HR email -> Get
