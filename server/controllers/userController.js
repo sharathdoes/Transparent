@@ -16,7 +16,7 @@ exports.signin = async (req, res) => {
             return res.status(401).json({ message: 'Invalid password' });
         }
 
-        return res.json(user);
+        return res.json({user : user});
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -37,7 +37,7 @@ exports.signup = async (req, res) => {
         // If role is HR, generate special response number
         if (role === 'HR') {
             await user.save();
-            return res.json({ user });
+            return res.json({ user:user });
         }
 
         // If role is TEAM LEAD or EMP and companyId is provided
@@ -48,7 +48,7 @@ exports.signup = async (req, res) => {
             }
 
             user.companyName = company.company_name;
-            user.companyId = company_id;
+            user.company_id = company_id;
             await user.save();
 
             // Add user to company's users array
@@ -57,7 +57,7 @@ exports.signup = async (req, res) => {
         }
 
         await user.save();
-        return res.json(user);
+        return res.json({ user: user});
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

@@ -33,7 +33,7 @@ exports.createCompany = async (req, res) => {
 
         // Update user with company details
         user.companyName = company_name;
-        user.companyId = company_id;
+        user.company_id = company_id;
         await user.save();
 
         return res.json(company);

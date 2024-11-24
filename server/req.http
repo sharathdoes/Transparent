@@ -41,8 +41,8 @@ POST {{baseUrl}}/users/signin
 Content-Type: {{contentType}}
 
 {
-    "email": "hr@company.com",
-    "password": "password123"
+    "email": "useroftransparent@gmail.com",
+    "password": "qwertyuiop"
 }
 
 ### Create Company (HR only)
@@ -51,7 +51,7 @@ Content-Type: {{contentType}}
 
 {
     "email": "hr@company.com",
-    "company_name": "Tech Company Ltd",
+    "company_name": "Tech  Ltd",
     "company_id":"12334"
 }
 
