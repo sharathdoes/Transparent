@@ -131,7 +131,7 @@ export default function SignUp() {
                 />
               </div>
             )}
-            <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-black">
+            <Button type="submit" className="w-full bg-red-500 hover:bg-red-700 text-black">
               Sign Up
             </Button>
           </form>

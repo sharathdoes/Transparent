@@ -28,8 +28,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         ref: 'Company',
         default: null
-    }
-});
+    },
+
+    score: { type: Number, default: 0 },
+    skillset: { type: [String], default: [] },
+    archived_tasks: { type: [mongoose.Schema.Types.ObjectId], ref: 'Task', default: [] },
+  });
 
 userSchema.pre('save', async function(next) {
     if (this.isModified('password')) {
